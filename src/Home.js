@@ -7,9 +7,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import { useProductContext } from './context/productContext';
 
 
 const Home = () => {
+
+   const {products} = useProductContext();
+   console.log(products )
   return (
     <>
       <Sliderr/>
