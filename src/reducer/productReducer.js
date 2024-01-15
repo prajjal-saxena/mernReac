@@ -1,29 +1,27 @@
 const ProductReducer = (state, action) => {
-    switch (action.type) {
+    switch(action.type) {
         case "SET_LOADING" : 
           return {
              ...state,
-             isLoading : true,
-
+             isLoading : true
           }
 
         case "SET_API_DATA" :
-
-            const featureData = action.payload.filter((curElem) => {
-                return curElem.featured=== true
+            const featuredData = action.payload.filter((elem) => {
+               return elem.featured == "true"
             })
+            console.log("state", featuredData)
+
             return {
                 ...state,
-                isLoading :false,
+                isLoading: false,
                 products : action.payload,
-                featuredProducts : featureData
-            }
-
-        case "API_ERROR" :
-            return {
-                ...state
+                featuredProducts : featuredData
             }
     }
 }
 
-export default ProductReducer;
+export default ProductReducer
+
+
+
