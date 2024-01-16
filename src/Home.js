@@ -22,12 +22,12 @@ const Home = () => {
       <Container>
       <h2 style={{textDecoration: "underline"}}>Top Categories</h2>
 
-       <Stack direction="row" spacing={2} style={{justifyContent: "center"}}>
+       <Stack direction="row" spacing={2} style={{justifyContent: "center", margin: ""}}>
           {
             featuredProducts.map((elem) => (
                 <Card key={elem.id} sx={{ maxWidth: 345 }}>
                   
-                <Link to={`/category/${elem.CategoryName}`}>
+                <Link to={`/category/${elem.CategoryName}`} style={{textDecoration: "none"}}>
                   <CardActionArea>
                   <CardMedia
                     component="img"
@@ -36,7 +36,7 @@ const Home = () => {
                     alt="green iguana"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h5" component="div" sx={{textDecoration: "none", color: "#000",}}>
                       {elem.CategoryName}
                     </Typography>
                   </CardContent>
